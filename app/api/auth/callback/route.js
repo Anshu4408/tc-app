@@ -25,7 +25,7 @@ export async function GET(req) {
       client_secret: process.env.DAUTH_CLIENT_SECRET,
       grant_type: "authorization_code",
       code,
-      redirect_uri: "http://localhost:3000/api/auth/callback",
+      redirect_uri: "https://tc-app-ssgz.onrender.com/api/auth/callback",
     }),
   });
 
@@ -53,7 +53,7 @@ const userData = await userRes.json();
 
 console.log(userData);
 
-  const response = NextResponse.redirect(new URL('http://localhost:3000/new', req.url));
+  const response = NextResponse.redirect(new URL('https://tc-app-ssgz.onrender.com/new', req.url));
   response.cookies.set("login", true, {
     httpOnly: true,
     path: '/',
