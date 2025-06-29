@@ -18,7 +18,7 @@ A full-stack **Next.js** application designed for students to **create, join, an
 - **Backend:** Node.js, API Routes
 - **Database:** MongoDB (via Mongoose)
 - **Auth:** Delta Auth (OAuth2)
-- **Hosting:** Docker-ready (can be deployed on any cloud)
+
 
 
 
