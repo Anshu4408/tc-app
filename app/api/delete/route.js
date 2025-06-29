@@ -1,0 +1,21 @@
+import { NextResponse } from 'next/server';
+import mongoose from 'mongoose';
+import model1 from '@/models/model1';
+export async function DELETE(req) {
+    if (!mongoose.connections[0].readyState) {
+       await mongoose.connect("mongodb://mongo:27017/tcdata");
+   }
+    const { searchParams } = new URL(req.url);
+
+const email = searchParams.get("email");
+const title = searchParams.get("title");
+const date = searchParams.get("date");
+const time = searchParams.get("Time");
+const result=await model1.deleteOne({ email,title,date,time });
+   if (result.deletedCount === 0) {
+      return NextResponse.json({ message: "No matching document found" }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: "Deleted successfully" }, { status: 200 });
+  
+}
