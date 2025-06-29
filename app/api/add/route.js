@@ -24,6 +24,6 @@ export async function POST(request){
 
     })
     await data.save();
-    return NextResponse.redirect("http://localhost:3000/new");
+    return NextResponse.redirect("https://tc-app-ssgz.onrender.com/new");
 
 }

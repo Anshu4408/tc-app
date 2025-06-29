@@ -8,7 +8,7 @@ export   async function  middleware(request)  {
  
   if(!token)
   {
-      return NextResponse.redirect(new URL('http://localhost:3000/', request.url));
+      return NextResponse.redirect(new URL('https://tc-app-ssgz.onrender.com', request.url));
   }
 
 
