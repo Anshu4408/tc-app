@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function PUT(request){
 
      if (!mongoose.connections[0].readyState) {
-           await mongoose.connect("mongodb://mongo:27017/tcdata");
+           await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8@@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
        }
          const body = await request.json(); 
   const { id, title, PeopleReq, date, Time ,Joined} = body;
