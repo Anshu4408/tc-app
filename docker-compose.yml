@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/tcdata
+      - MONGODB_URI=mongodb+srv://Anshu45:Anshukumar8@@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
     depends_on:
       - mongo
 
