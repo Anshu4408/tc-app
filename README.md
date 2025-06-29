@@ -1,3 +1,30 @@
+# 🧩 NITTeamly – Group Formation Web App
+
+A full-stack **Next.js** application designed for students to **create, join, and manage temporary teams** for college events, projects, or group activities. Built with a simple and clean UI, Team Connect improves collaboration and coordination on campus.
+
+## 🚀 Features
+
+- ✅ **Create Teams** — Set a title, required members, and expiration time.
+- 👥 **Join/Leave Teams** — Easily join or exit available groups.
+- 🗑️ **Delete by Creator** — Team creators can remove their group anytime.
+- 🕐 **Auto Expiry** — Teams are auto-deleted once the specified time expires.
+- 🔐 **Secure Login** — Delta Auth (DAuth) integrated for authentication.
+- 🍪 **Session Handling** — Email stored securely in cookies.
+- 📦 **MongoDB** — Stores all team-related data persistently.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js, Tailwind CSS
+- **Backend:** Node.js, API Routes
+- **Database:** MongoDB (via Mongoose)
+- **Auth:** Delta Auth (OAuth2)
+- **Hosting:** Docker-ready (can be deployed on any cloud)
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +61,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
