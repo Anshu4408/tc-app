@@ -5,7 +5,7 @@ export   async function  middleware(request)  {
  
   if(!token)
   {
-      return NextResponse.redirect(new URL('https://tc-app-ssgz.onrender.com', request.url));
+      return NextResponse.redirect(new URL('https://tc-app-nu.vercel.app', request.url));
   }
 
 
