@@ -25,7 +25,7 @@ export async function GET(req) {
       client_secret: process.env.DAUTH_CLIENT_SECRET,
       grant_type: "authorization_code",
       code,
-      redirect_uri: "hhttps://tc-app-nu.vercel.app/api/auth/callback",
+      redirect_uri: "https://tc-app-nu.vercel.app/api/auth/callback",
     }),
   });
 
