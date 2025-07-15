@@ -11,12 +11,11 @@ const page = () => {
   const [del, setdel] = useState(0)
   const [Time, setTime] = useState("")
 const [date, setdate] = useState("")
-const [join, setjoin] = useState(false)
-const [idx, setidx] = useState(null)
+
 const [update, setupdate] = useState(0)
     useEffect(() => {
       const interval=()=>{setInterval(()=>{
-        console.log("timechanged")
+    
         const time = new Date().toLocaleTimeString('en-US', {
   hour: '2-digit',
   minute: '2-digit',
