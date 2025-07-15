@@ -24,6 +24,6 @@ export async function POST(request){
 
     })
     await data.save();
-    return NextResponse.redirect("https://tc-app-nu.vercel.app/new");
+    return NextResponse.json({ message: "Data added successfully" }, { status: 200 });
 
 }
