@@ -14,8 +14,8 @@ const page = () => {
 
   const [update, setupdate] = useState(0)
   useEffect(() => {
-    const interval = () => {
-      setInterval(() => {
+    const interval= setInterval(() => {
+     
 
         const time = new Date().toLocaleTimeString('en-US', {
           hour: '2-digit',
@@ -26,8 +26,8 @@ const page = () => {
         setdate(today);
         setTime(time)
       }, 10 * 1000)
-    }
-    interval();
+    
+
     return () => clearInterval(interval)
   }, [])
 
