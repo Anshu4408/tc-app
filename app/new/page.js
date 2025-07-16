@@ -79,7 +79,7 @@ const page = () => {
       setemail(decodeURIComponent(value))
       try{
         const fn= async () => {
-        const Res = await fetch(`/api/userSave/?email=${email}`, {
+        const Res = await fetch(`/api/userSave/?email=${decodeURIComponent(value)}`, {
           method: "POST",
         });
         fn();
