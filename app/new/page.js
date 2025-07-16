@@ -77,18 +77,21 @@ const page = () => {
       const value = nameCookie.split('=')[1];
 
       setemail(decodeURIComponent(value))
+       const fn= async () => {
       try{
-        const fn= async () => {
+       
         const Res = await fetch(`/api/userSave/?email=${decodeURIComponent(value)}`, {
           method: "POST",
         });
-        fn();
+       
    
 
     }
-  }catch(err){
+  catch(err){
     console.log(err);
   }
+   fn();
+}
     }
   }, [])
   const handleClick = async (e) => {
