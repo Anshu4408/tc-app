@@ -81,7 +81,7 @@ const page = () => {
     setloading(true);
     setupdate(update + 1)
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
-    if (!arr.includes(e.email)) {
+    if (!arr.includes(email)) {
       arr.push(email);
     }
     const res = await fetch("/api/update", {
@@ -108,8 +108,8 @@ const page = () => {
     setupdate(update + 1)
     let newArr;
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
-    if (arr.includes(e.email)) {
-      newArr = arr.filter(item => item !== e.email);
+    if (arr.includes(email)) {
+      newArr = arr.filter(item => item !== email);
     }
     const res = await fetch("/api/update", {
       method: "PUT",
