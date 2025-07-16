@@ -194,7 +194,7 @@ const page = () => {
 
         {showform && (
           <>
-            <div className='bg-gradient-to-l from-blue-600 to-white  fixed top-[50vh] mx-[30vw] w-[50vw] h-[30vh] rounded-2xl flex justify-center items-center'>
+            <div className='bg-blue-500 text-white fixed top-[50vh] mx-[30vw] w-[50vw] h-[30vh] rounded-2xl flex justify-center items-center'>
               <form className='flex flex-col  ' method="POST" onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target);
@@ -211,7 +211,7 @@ const page = () => {
               }}>
                 <label htmlFor="title"></label>
                 <input id="title" name="title" className='border-1 text-center m-4 rounded-sm' type="text" placeholder='Title' required={true} />
-                <span><label htmlFor='PeopleReq'> People Required</label><input className='border-1 text-center m-4 rounded-sm text-black' type="number" name="required" plceholder="Number of people required" required={true} /></span>
+                <span><label htmlFor='PeopleReq'> People Required</label><input className='border-1 text-center m-4 rounded-sm ' type="number" name="required" plceholder="Number of people required" required={true} /></span>
 
                 <span className='flex gap-6 m-4 '>   <label htmlFor="time"> Expires till :</label>
 
@@ -220,7 +220,7 @@ const page = () => {
                   <input id="date" className='border-1 text-center rounded-sm' type="date" name="date" required={true}/></span>
 
 
-                <input className='border-1 text-center m-4 rounded-sm w-1/3 mx-auto bg-green-800 text-white hover:bg-green-700 cursor-pointer' type="submit" />
+                <input className='border-1 text-center m-4 rounded-sm w-1/3 mx-auto bg-white text-blue-700 hover:bg-blue-300 cursor-pointer' type="submit" />
               </form>
             </div>
           </>
