@@ -17,18 +17,18 @@ if (!globalThis.wss) {
 
     wss.on("connection", (ws, request) => {
       
-        const { searchParams } = new URL(request.url, "https://tc-app-nu.vercel.app");
+        const { searchParams } = new URL(request.url, "http://localhost");
         const username = searchParams.get("username");
       
         console.log("New client connected");
        
-        globalThis.clients.set(username, ws);
+        globalThis.clients.set(username,ws);
         
        
        
     })
 
-}
+}   
 
 
 export async function PUT(request) {
