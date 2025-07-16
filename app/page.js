@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import "./page.css";
 import { useState,useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
