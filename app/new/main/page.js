@@ -12,7 +12,7 @@ const page = () => {
      const [Messages, setMessages] = useState([])
     const [Data, setData] = useState([])
          const connectwebSocket = (req) => {
-            const socket = new WebSocket(`ws://localhost:8080/?username=${req}`);
+            const socket = new WebSocket(`ws://tc-app-nu.vercel.app/?username=${req}`);
             socket.onopen = () => {
                 console.log("WebSocket connection established");
             };

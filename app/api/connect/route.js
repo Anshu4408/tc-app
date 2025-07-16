@@ -17,7 +17,7 @@ if (!globalThis.wss) {
 
     wss.on("connection", (ws, request) => {
       
-        const { searchParams } = new URL(request.url, "http://localhost");
+        const { searchParams } = new URL(request.url, "https://tc-app-nu.vercel.app");
         const username = searchParams.get("username");
       
         console.log("New client connected");
