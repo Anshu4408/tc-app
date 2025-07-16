@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Footer from '../components/Footer/footer'
 import FNavbar from '../components/finalNav/Nav'
 import Loading from '../components/Loader/Loader'
-import { set } from 'mongoose'
+
 
 const page = () => {
 

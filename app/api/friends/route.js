@@ -39,5 +39,5 @@ export async function PUT(request) {
 
         { new: true }
     )
-    return NextResponse.redirect("/new/main")
+    return NextResponse.redirect("https://tc-app-nu.vercel.app/new/main")
 }
