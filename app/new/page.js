@@ -54,8 +54,9 @@ const page = () => {
 
 
     async function fn() {
-      const Res=await fetch("/api/userSave", {
+      const Res=await fetch(`/api/userSave/?email=${email}`, {
         method: "POST",
+
        
       });
       const res = await fetch("/api/get", {
