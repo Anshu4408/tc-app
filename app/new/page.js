@@ -17,6 +17,14 @@ const page = () => {
 
   const [update, setupdate] = useState(0)
   
+  const handlefriends = async (e, email) => {
+    setloading(true);
+    const res = await fetch(`/api/friends/?friendemail=${e}&myemail=${email}`, {
+      method: "POST",
+   
+    });
+
+  }
    
   useEffect(() => {
     const interval= setInterval(() => {
@@ -175,6 +183,10 @@ const page = () => {
                       handleClick(e);
                     }}>Delete</button>
                   )}
+                  <button className='bg-blue-500 text-white text-lg pl-4 pr-4 rounded-sm  cursor-pointer' onClick={() => {
+                    handlefriends(e.email,email);
+
+                  }}>Message</button>
           
                   <p>{e.Joined.length}/{e.PeopleReq && (e.PeopleReq)}{!e.PeopleReq && (0)}</p>
                 </span>

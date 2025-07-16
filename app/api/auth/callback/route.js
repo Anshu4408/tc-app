@@ -70,6 +70,10 @@ console.log(userData);
     httpOnly: false,
     path: '/',
   });
+   response.cookies.set("username", userData.email, {
+    httpOnly: false,
+    path: '/',
+  });
 
   return response;
 }
