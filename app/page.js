@@ -1,9 +1,21 @@
 import Image from "next/image";
 import "./page.css";
+import { useState,useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/footer";
+import Loading from "./components/Loader/Loader";
 export default function Home() {
+   const [fontLoaded, setFontLoaded] = useState(false);
+   useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
+  if (!fontLoaded) {
+    return <Loading />;
+  }
   return (
+    
     <>
     <Navbar/>
 <div className="flex  min-w-[100vw] min-h-[120vh]   bg-[url('/bgtc_upscaled.jpg')] bg-cover bg-center h-screen custom-font  " >

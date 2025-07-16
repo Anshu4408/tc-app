@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Footer from '../components/Footer/footer'
 import FNavbar from '../components/finalNav/Nav'
+import Loading from '../components/Loader/Loader'
 
 const page = () => {
   const [showform, setshowform] = useState(false)
@@ -11,6 +12,7 @@ const page = () => {
   const [del, setdel] = useState(0)
   const [Time, setTime] = useState("")
   const [date, setdate] = useState("")
+  const [Loading, setLoading] = useState(false)
 
   const [update, setupdate] = useState(0)
   useEffect(() => {
@@ -32,6 +34,7 @@ const page = () => {
   }, [])
 
   useEffect(() => {
+    setLoading(true);
 
 
     async function fn() {
@@ -44,7 +47,7 @@ const page = () => {
     fn();
 
 
-
+setLoading
   }, [showform, del, update])
 
   useEffect(() => {
@@ -58,11 +61,12 @@ const page = () => {
     }
   }, [])
   const handleClick = async (e) => {
+    setLoading(true);
     const res = await fetch(`/api/delete?email=${e.email}&title=${e.title}&date=${e.date}&time=${e.Time}`, {
       method: "DELETE",
     })
     setdel(del + 1);
-
+     setLoading
   }
   useEffect(() => {
     data.forEach(e => {
@@ -73,6 +77,7 @@ const page = () => {
   }, [Time]);
 
   const handleJoin = async (e) => {
+    setLoading
     setupdate(update + 1)
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
     if (!arr.includes(e.email)) {
@@ -95,8 +100,10 @@ const page = () => {
 
     const data = await res.json();
     console.log("Updated:", data);
+    setLoading(false);
   };
   const handleJoin2 = async (e) => {
+    setLoading(true);
     setupdate(update + 1)
     let newArr;
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
@@ -116,15 +123,18 @@ const page = () => {
         Time: e.Time,
         Joined: newArr,
       }),
+
     });
 
     const data = await res.json();
     console.log("Updated:", data);
+    setLoading(false);
   };
 
   return (
     <div>
       <FNavbar />
+      {Loading && <Loading />}
 
       <div className="body min-w-[100vw] min-h-[140vh]   ">
 
