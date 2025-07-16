@@ -156,7 +156,7 @@ const page = () => {
                   <p className='text-sm mx-1'>Created By: <span className='font-bold'>{e.name}</span></p>
                   <p className='text-sm mx-1'>Contact Info: <span className='font-bold'>{e.phone}</span></p>
 
-                  {!(e.Joined.find((num) => num === email)) && (
+                  {!(e.Joined.find((num) => num === email)) &&(e.Joined.length < e.PeopleReq) && (
                     <button className='bg-green-600 text-white text-lg pl-4 pr-4 rounded-sm  cursor-pointer' onClick={() => {
                       handleJoin(e);
                     }}>Join</button>
