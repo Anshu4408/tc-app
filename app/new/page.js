@@ -6,6 +6,7 @@ import FNavbar from '../components/finalNav/Nav'
 import Loading from '../components/Loader/Loader'
 
 const page = () => {
+
   const [showform, setshowform] = useState(false)
   const [data, setdata] = useState([])
   const [email, setemail] = useState("")
@@ -15,6 +16,8 @@ const page = () => {
   const [loading, setloading] = useState(false)
 
   const [update, setupdate] = useState(0)
+  
+   
   useEffect(() => {
     const interval= setInterval(() => {
      
@@ -172,7 +175,7 @@ const page = () => {
                       handleClick(e);
                     }}>Delete</button>
                   )}
-
+          
                   <p>{e.Joined.length}/{e.PeopleReq && (e.PeopleReq)}{!e.PeopleReq && (0)}</p>
                 </span>
 
@@ -191,7 +194,7 @@ const page = () => {
 
         {showform && (
           <>
-            <div className=' bg-[#ffffff7c] fixed top-[50vh] mx-[30vw] w-[50vw] h-[30vh] rounded-2xl flex justify-center items-center'>
+            <div className='bg-gradient-to-l from-blue-600 to-white  fixed top-[50vh] mx-[30vw] w-[50vw] h-[30vh] rounded-2xl flex justify-center items-center'>
               <form className='flex flex-col  ' method="POST" onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target);

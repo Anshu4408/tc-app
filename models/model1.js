@@ -8,6 +8,7 @@ const Schema=new mongoose.Schema({
     phone:String,
     email:String,
     Joined:[String],
+    Messages:[String],
     
 })
 export default mongoose.models.tcdata || mongoose.model('tcdata', Schema)
