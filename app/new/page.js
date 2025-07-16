@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Footer from '../components/Footer/footer'
 import FNavbar from '../components/finalNav/Nav'
 import Loading from '../components/Loader/Loader'
+import { set } from 'mongoose'
 
 const page = () => {
 
@@ -23,6 +24,10 @@ const page = () => {
       method: "POST",
    
     });
+    setloading(false);
+    if(res.redirected) {
+      window.location.href = res.url;
+    }
 
   }
    
