@@ -6,19 +6,28 @@ export default function Home() {
   return (
     <>
     <Navbar/>
-<div className="flex  items-center p-7 " >
-  <p className="text-6xl my-10 text-white flex flex-col"><span className="text-8xl ">Welcome to NITTeamly, </span><span className="mt-10 mx-60">From <span className="text-green-700 font-bold">Strangers </span>to Teammates — Instantly.</span></p>
+<div className="flex  min-w-[100vw] min-h-[120vh]   bg-[url('/bgtc_upscaled.jpg')] bg-cover bg-center h-screen custom-font  " >
+<div>
+  <p className="text-6xl  text-white flex flex-col  custom-font">
+    <span className="text-8xl custom-font mt-20 ml-[23vw] ">Welcome to NITTeamly, </span>
+    <span className=" mt-30 ml-90 absolute bottom-[-250]">From 
+      <span className="text-blue-700 font-bold">Strangers 
+        </span>to Teammates — Instantly.</span>
+        </p>
  
+ </div>
+  {/* 
 </div>
-<div className="flex justify-center items-center">
+<div className="flex justify-center items-center  custom-font">
 
-<p className="text-white text-4xl mx-10 font-bold">NITTeamly brings Trichy minds together.
-Create, join, and collaborate — effortlessly.</p> <img className=" w-[30vw] mx-[10]" src="/5551.jpg"/>
+<p className=" text-4xl mx-10 font-bold">NITTeamly brings Trichy minds together.
+Create, join, and collaborate — effortlessly.</p> 
 </div>
-<p className="text-white text-2xl p-4"> Group up smarter at NIT Trichy.
+<p className=" text-2xl p-4"> Group up smarter at NIT Trichy.
 Find teammates, projects, and friends — all in one place.</p>
-<p className="text-white text-2xl p-4">Your team. Your terms.
-From hostel rooms to hackathons, NITTeamly makes group formation simple.</p>
+<p className=" text-2xl p-4">Your team. Your terms.
+From hostel rooms to hackathons, NITTeamly makes group formation simple.</p> */}
+</div>
 <Footer/>
     </>
   );

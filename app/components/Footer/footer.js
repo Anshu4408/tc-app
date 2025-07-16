@@ -6,7 +6,7 @@ const Footer = () => {
   <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
     
     <div className="text-center md:text-left mb-4 md:mb-0">
-      <h1 className="text-2xl font-bold text-green-400">NITTeamly</h1>
+      <h1 className="text-2xl font-bold text-blue-400">NITTeamly</h1>
       <p className="text-sm text-gray-400">Connecting Trichians, one group at a time.</p>
     </div>
 
