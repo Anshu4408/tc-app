@@ -10,7 +10,10 @@ export async function POST(request) {
     return NextResponse.json({ message: "Email is required" }, { status: 400 });
   }
 
-
+const existingUser = await userModel.findOne({ email: email });
+    if (existingUser) {
+        return NextResponse.json({ message: "User already exists" }, { status: 409 });
+    }               
   const newUser = new userModel({
     email: email,
    
