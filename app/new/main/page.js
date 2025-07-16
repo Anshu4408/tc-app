@@ -135,13 +135,9 @@ const page = () => {
                 )}
                 {friend!=="Select a Friend to Chat" && (
                     
-                    <form className='flex  gap-2 p-5 fixed bottom-[-10] w-[60vw] ' >
+                    <form className='flex  gap-2 p-5 fixed bottom-[-10] w-[60vw] 'onSubmit={(e) => {
+                         e.preventDefault();
 
-                    <input type='text' className='text-2xl text-center bg-blue-400   border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
-                   
-                    <input type='submit' className=" cursor-pointer  rounded-full  mx-auto bg-[url('/1564528_fly_messager_send_communication_email_icon.png')] bg-cover bg-center  " value="        " onClick={(e) => { e.preventDefault(); 
-                    
-                    
                     const formdata = new FormData();
                     formdata.append("username", friend);
                     formdata.append("message", currmessage);
@@ -153,7 +149,13 @@ const page = () => {
                         console.log(data);
                         setmessage("");
                     }).catch(err => console.error(err));
-                }} />
+                }} >
+
+                    <input type='text' className='text-2xl text-center bg-blue-400   border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
+                   
+                    <input type='submit' className=" cursor-pointer  rounded-full  mx-auto bg-[url('/1564528_fly_messager_send_communication_email_icon.png')] bg-cover bg-center  " value="        " 
+                      
+                 />
                 </form>
             )}
                 </div>
