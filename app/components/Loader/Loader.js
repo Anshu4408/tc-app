@@ -2,7 +2,7 @@ import React from 'react'
 //taken from internet
 const Loading = () => {
   return (
-   <div className="hand absolute w-20 h-16 ml-200 mt-200 ">
+   <div className="hand absolute w-20 h-16 ml-200 mt-100 ">
       <div className="finger"></div>
       <div className="finger"></div>
       <div className="finger"></div>
