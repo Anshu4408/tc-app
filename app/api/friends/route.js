@@ -16,8 +16,8 @@ export async function PUT(request) {
     if (!frienduser || !user) {
         return NextResponse.json({ success: false, message: "Invalid request" }, { status: 400 });
     }
-    const SearchResult = await model1.findOne({ username: user });
-    const SearchResult1 = await model1.findOne({ username: frienduser });
+    const SearchResult = await model1.findOne({ email: user });
+    const SearchResult1 = await model1.findOne({ email: frienduser });
      if(!SearchResult1){
     return NextResponse.json({sucess:false,message:"Invalid username"})
    }
