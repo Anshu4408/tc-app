@@ -90,8 +90,9 @@ const page = () => {
   catch(err){
     console.log(err);
   }
-   fn();
+  
 }
+ fn();
     }
   }, [])
   const handleClick = async (e) => {
