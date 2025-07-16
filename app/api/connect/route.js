@@ -56,6 +56,7 @@ export async function PUT(request) {
     if (user) {
 
             for (const [uname, socket] of globalThis.clients.entries()) {
+                console.log("Sending message to:", uname);
                 
                 if (socket.readyState === 1 && (uname === username || uname === token)) {
                     socket.send(`${token}: ${data}`);
