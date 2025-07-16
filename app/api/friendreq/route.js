@@ -7,10 +7,10 @@ export async function GET() {
    await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8%40@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     }
       const cookieStore = cookies(); 
-  const cookie = cookieStore.get('username'); 
-  const token = cookie?.value;
+  const cookie =  cookieStore.get('username'); 
+  const token = decodeURIComponent(cookie?.value);
      console.log(token);
-  const SearchResult = await model1.findOne({ username: token });
+  const SearchResult = await model1.findOne({ email: token });
   console.log(SearchResult)
  
  if (SearchResult) {

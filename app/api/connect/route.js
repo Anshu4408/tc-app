@@ -37,11 +37,11 @@ export async function PUT(request) {
     await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8%40@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     const cookieStore = await cookies();
     const cookie = cookieStore.get('username');
-    const token = cookie?.value;
+    const token = decodeURIComponent(cookie?.value);
         console.log(token)
     const formdata = await request.formData();
 
-    const username = formdata.get("username");
+    const username = decodeURIComponent(formdata.get("username") );
     console.log(username)
     let data = formdata.get("message");
     if(!data)data="Connected"

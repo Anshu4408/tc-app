@@ -11,8 +11,8 @@ export async function PUT(request) {
        await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8%40@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         }
      const { searchParams } = new URL(request.url);
-    const frienduser = searchParams.get("friendemail");
-  const user = searchParams.get("myemail");
+    const frienduser = decodeURIComponent(searchParams.get("friendemail"));
+  const user = decodeURIComponent(searchParams.get("myemail"));
     if (!frienduser || !user) {
         return NextResponse.json({ success: false, message: "Invalid request" }, { status: 400 });
     }
