@@ -45,8 +45,8 @@ export async function PUT(request) {
     console.log(username)
     let data = formdata.get("message");
     if(!data)data="Connected"
-    const user = await model1.findOne({ username: token });
-    const otheruser = await model1.findOne({ username: username });
+    const user = await model1.findOne({ email: token });
+    const otheruser = await model1.findOne({ email: username });
 
     if (user) {
 
