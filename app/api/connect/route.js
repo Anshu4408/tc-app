@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import model1 from "@/models/model1";
+import userModel from "@/models/userModel";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { WebSocketServer } from "ws";
@@ -45,8 +45,8 @@ export async function PUT(request) {
     console.log(username)
     let data = formdata.get("message");
     if(!data)data="Connected"
-    const user = await model1.findOne({ email: token });
-    const otheruser = await model1.findOne({ email: username });
+    const user = await userModel.findOne({ email: token });
+    const otheruser = await userModel.findOne({ email: username });
 
     if (user) {
 
@@ -54,12 +54,12 @@ export async function PUT(request) {
                 
                 if (socket.readyState === 1 && (uname === username || uname === token)) {
                     socket.send(`${token}: ${data}`);
-                   const update= await model1.findOneAndUpdate(
+                   const update= await userModel.findOneAndUpdate(
                         { email: uname },
                         { $push: { messages:`${token}: ${data}`  } },
                         { new: true }
                     );
-                    const update2 = await model1.findOneAndUpdate(
+                    const update2 = await userModel.findOneAndUpdate(
                         { email: token },
                         { $push: { messages: `${uname}: ${data}` } },
                         { new: true }
