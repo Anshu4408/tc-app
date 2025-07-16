@@ -137,7 +137,7 @@ const page = () => {
       <FNavbar />
       {loading && <Loading />}
 
-      <div className="body min-w-[100vw] min-h-[140vh]   ">
+      <div className="body min-w-[100vw] min-h-[140vh] overflow-y-auto   ">
 
         <div className="body max-w-[90vw] overflow-y-auto min-h-[110vh] bg-white mx-auto mt-10 rounded-2xl bg-gradient-to-l from-white to-gray-500 pt-3">
           <button onClick={() => {
