@@ -21,8 +21,8 @@ const page = () => {
   const handlefriends = async (e, email) => {
     setloading(true);
     const res = await fetch(`/api/friends/?friendemail=${e}&myemail=${email}`, {
-      method: "POST",
-   
+      method: "PUT",
+
     });
     setloading(false);
     if(res.redirected) {
