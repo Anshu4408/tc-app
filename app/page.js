@@ -18,6 +18,10 @@ export default function Home() {
     
     <>
     <Navbar/>
+    <link
+  href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Bebas+Neue&family=Orbitron:wght@400..900&display=swap"
+  rel="stylesheet"
+/>
 <div className="flex  min-w-[100vw] min-h-[100vh]   bg-[url('/bgtc_upscaled.jpg')] bg-cover bg-center h-screen custom-font  " >
 <div>
   <p className="text-6xl  text-white flex flex-col  custom-font">
