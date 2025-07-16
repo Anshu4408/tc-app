@@ -53,18 +53,8 @@ const page = () => {
     }, [update]);
       
 
-    const [username, setusername] = useState("")
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const res = await fetch(`/api/addfriend/?friendusername=${username}`, {
-            method: "PUT"
-        })
-        setAddFriend(false);
-        const data = await res.json();
-        alert(data.message);
-
-    }
+ 
+    
     return (<>
         <div className='flex  h-[100vh] w-[100vw] p-0'>
             
@@ -147,7 +137,7 @@ const page = () => {
                     
                     <form className='flex  gap-2 p-5 fixed bottom-[-10] w-[60vw] ' >
 
-                    <input type='text' className='text-2xl text-center bg-blue-400  border-black border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
+                    <input type='text' className='text-2xl text-center bg-blue-400   border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
                    
                     <input type='submit' className=" cursor-pointer  rounded-full  mx-auto bg-[url('/1564528_fly_messager_send_communication_email_icon.png')] bg-cover bg-center  " value="        " onClick={(e) => { e.preventDefault(); 
                     
