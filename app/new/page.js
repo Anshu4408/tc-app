@@ -47,7 +47,7 @@ const page = () => {
     fn();
 
 
-setloading
+setloading(false);
   }, [showform, del, update])
 
   useEffect(() => {
