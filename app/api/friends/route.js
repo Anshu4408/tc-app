@@ -2,7 +2,7 @@
     import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import model1 from "@/models/model1";
+import userModel from "@/models/userModel";
 
 export async function PUT(request) {
   
@@ -16,8 +16,8 @@ export async function PUT(request) {
     if (!frienduser || !user) {
         return NextResponse.json({ success: false, message: "Invalid request" }, { status: 400 });
     }
-    const SearchResult = await model1.findOne({ email: user });
-    const SearchResult1 = await model1.findOne({ email: frienduser });
+    const SearchResult = await userModel.findOne({ email: user });
+    const SearchResult1 = await userModel.findOne({ email: frienduser });
      if(!SearchResult1){
     return NextResponse.json({sucess:false,message:"Invalid username"})
    }
@@ -25,7 +25,7 @@ export async function PUT(request) {
         return NextResponse.json({ success: false, message: "User not found" }, { status: 404 });
     }
    const token = SearchResult._id;
-   await model1.findByIdAndUpdate(
+   await userModel.findByIdAndUpdate(
         token,
        { $addToSet: { friends: frienduser } },
 
@@ -33,7 +33,7 @@ export async function PUT(request) {
     )
     const token1 = SearchResult1._id;
 
-    await model1.findByIdAndUpdate(
+    await userModel.findByIdAndUpdate(
         token1,
        { $addToSet: { friends:user } },
 
