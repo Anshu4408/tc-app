@@ -47,6 +47,7 @@ export async function PUT(request) {
     if(!data)data="Connected"
     const user = await userModel.findOne({ email: token });
     const otheruser = await userModel.findOne({ email: username });
+     console.log(user, otheruser)
     if (!user || !otheruser) {
         console.log("User not found");
         return NextResponse.json({ message: "User not found" }, { status: 404 });
