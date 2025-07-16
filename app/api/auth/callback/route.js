@@ -50,13 +50,7 @@ const userRes = await fetch("https://auth.delta.nitt.edu/api/resources/user", {
 
 const userData = await userRes.json();
 
-await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8%40@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
-const user=new userModel({
-  email: userData.email,
 
-  friends: [],
-  messages: [],
-});
 
 console.log(userData);
 

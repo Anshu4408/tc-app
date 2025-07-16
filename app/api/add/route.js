@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import model1 from "@/models/model1";
+import userModel from "@/models/userModel";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 export async function POST(request){
@@ -23,7 +24,10 @@ export async function POST(request){
     Joined:[],
 
     })
+
     await data.save();
+    const user = new userModel({ email: email, friends: [], messages: [] });
+    await user.save();
     return NextResponse.json({ message: "Data added successfully" }, { status: 200 });
 
 }
