@@ -54,17 +54,14 @@ const page = () => {
 
 
     async function fn() {
-      const Res=await fetch(`/api/userSave/?email=${email}`, {
-        method: "POST",
-
-       
-      });
+    
       const res = await fetch("/api/get", {
         method: "GET",
       })
       const Data = await res.json();
       setdata(Data);
       setloading(false);
+       
     }
     fn();
 
@@ -80,6 +77,18 @@ const page = () => {
       const value = nameCookie.split('=')[1];
 
       setemail(decodeURIComponent(value))
+      try{
+        const fn= async () => {
+        const Res = await fetch(`/api/userSave/?email=${email}`, {
+          method: "POST",
+        });
+        fn();
+   
+
+    }
+  }catch(err){
+    console.log(err);
+  }
     }
   }, [])
   const handleClick = async (e) => {
