@@ -12,7 +12,7 @@ const page = () => {
   const [del, setdel] = useState(0)
   const [Time, setTime] = useState("")
   const [date, setdate] = useState("")
-  const [Loading, setLoading] = useState(false)
+  const [loading, setloading] = useState(false)
 
   const [update, setupdate] = useState(0)
   useEffect(() => {
@@ -34,7 +34,7 @@ const page = () => {
   }, [])
 
   useEffect(() => {
-    setLoading(true);
+    setloading(true);
 
 
     async function fn() {
@@ -47,7 +47,7 @@ const page = () => {
     fn();
 
 
-setLoading
+setloading
   }, [showform, del, update])
 
   useEffect(() => {
@@ -61,12 +61,12 @@ setLoading
     }
   }, [])
   const handleClick = async (e) => {
-    setLoading(true);
+    setloading(true);
     const res = await fetch(`/api/delete?email=${e.email}&title=${e.title}&date=${e.date}&time=${e.Time}`, {
       method: "DELETE",
     })
     setdel(del + 1);
-     setLoading
+     setloading(false);
   }
   useEffect(() => {
     data.forEach(e => {
@@ -77,7 +77,7 @@ setLoading
   }, [Time]);
 
   const handleJoin = async (e) => {
-    setLoading
+    setloading(true);
     setupdate(update + 1)
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
     if (!arr.includes(e.email)) {
@@ -100,10 +100,10 @@ setLoading
 
     const data = await res.json();
     console.log("Updated:", data);
-    setLoading(false);
+    setloading(false);
   };
   const handleJoin2 = async (e) => {
-    setLoading(true);
+    setloading(true);
     setupdate(update + 1)
     let newArr;
     const arr = Array.isArray(e.Joined) ? [...e.Joined] : [];
@@ -128,13 +128,13 @@ setLoading
 
     const data = await res.json();
     console.log("Updated:", data);
-    setLoading(false);
+    setloading(false);
   };
 
   return (
     <div>
       <FNavbar />
-      {Loading && <Loading />}
+      {loading && <Loading />}
 
       <div className="body min-w-[100vw] min-h-[140vh]   ">
 
