@@ -43,11 +43,12 @@ const page = () => {
       })
       const Data = await res.json();
       setdata(Data);
+      setloading(false);
     }
     fn();
 
 
-setloading(false);
+
   }, [showform, del, update])
 
   useEffect(() => {
@@ -138,7 +139,7 @@ setloading(false);
 
       <div className="body min-w-[100vw] min-h-[140vh]   ">
 
-        <div className="body max-w-[90vw] min-h-[110vh] bg-white mx-auto mt-10 rounded-2xl bg-gradient-to-l from-white to-gray-500 pt-3">
+        <div className="body max-w-[90vw] overflow-y-auto min-h-[110vh] bg-white mx-auto mt-10 rounded-2xl bg-gradient-to-l from-white to-gray-500 pt-3">
           <button onClick={() => {
             setshowform(true)
           }} className=' rounded-sm p-2 text-3xl text-center flex items-center justify-center mx-auto bg-green-600  text-black hover:bg-green-800 '><p className='cursor-pointer'>Add new Team</p></button>
