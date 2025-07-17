@@ -88,7 +88,7 @@ const page = () => {
                             Data.friends.map((req, index) => (
 
                                 <div key={index} className='mt-5 flex justify-between items-center bg-blue-500 p-2 w-full  cursor-pointer overflow-y-scroll' onClick={() => { setfriend(req) 
-                                    connectwebSocket(req);
+                                     setMessages([]); connectwebSocket(req);
 
                                 }}>
                                     <div className='mr-4'>{req}</div>
@@ -157,8 +157,8 @@ const page = () => {
                     formdata.append("message", currmessage);
                    
                    if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
-        socketRef.current.send(currmessage);
-        setcurrmessage("");
+                    socketRef.current.send(currmessage);
+                    setcurrmessage("");
       }
    }}>
 
