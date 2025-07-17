@@ -2,33 +2,7 @@ import mongoose from "mongoose";
 import userModel from "@/models/userModel";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { WebSocketServer } from "ws";
 
-
- 
-
-if (!globalThis.wss) {
- 
-   
-    const wss = new WebSocketServer({ port: 8080 });
-    globalThis.wss = wss;
-    globalThis.clients = new Map();
-
-
-    wss.on("connection", (ws, request) => {
-      
-        const { searchParams } = new URL(request.url, "https://tc-app-nu.vercel.app");
-        const username = searchParams.get("username");
-      
-        console.log("New client connected");
-       
-        globalThis.clients.set(username,ws);
-        
-       
-       
-    })
-
-}   
 
 
 export async function PUT(request) {
@@ -55,11 +29,7 @@ export async function PUT(request) {
 
     if (user) {
 
-            for (const [uname, socket] of globalThis.clients.entries()) {
-                console.log("Sending message to:", uname);
-                
-                if (socket.readyState === 1 && (uname === username || uname === token)) {
-                    socket.send(`${token}: ${data}`);
+         
                    const update= await userModel.findOneAndUpdate(
                         { email: uname },
                         { $push: { messages:`${token}: ${data}`  } },
@@ -70,17 +40,16 @@ export async function PUT(request) {
                         { $push: { messages: `${uname}: ${data}` } },
                         { new: true }
                     );
-                }
+                
               
             }
 
 
-        
+      
 
     }
-   
+   return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
 
 
-    return NextResponse.json({ message: "SENT" })
+    
 
-}
