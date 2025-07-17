@@ -4,6 +4,7 @@ import React from 'react'
 import { useState, useEffect,useRef } from 'react'
 
 const page = () => {
+    const [email, setemail] = useState("")
     const socketRef = useRef(null);
     const [OldMessages, setOldMessages] = useState([])
     const [update, setupdate] = useState(0)
@@ -16,7 +17,7 @@ const page = () => {
              if (socketRef.current) {
         socketRef.current.close();
     }
-            const socket = new WebSocket(`wss://socket-server-t4df.onrender.com/?username=${req}`);
+            const socket = new WebSocket(`wss://socket-server-nextjs.onrender.com/api/?username=${req}&myusername=${encodeURIComponent(email)}`);
                 socketRef.current = socket;
             socket.onopen = () => {
                 console.log("WebSocket connection established");
@@ -32,6 +33,14 @@ const page = () => {
             };
         }
     useEffect(() => {
+         const allcookie = document.cookie
+    const cookieArray = allcookie.split(";")
+    const nameCookie = cookieArray.find(e => e.trim().startsWith('email='))
+    if (nameCookie) {
+      const value = nameCookie.split('=')[1];
+
+      setemail(decodeURIComponent(value))
+    }
    
         const fn = async () => {
             try {
@@ -146,6 +155,7 @@ const page = () => {
                     const formdata = new FormData();
                     formdata.append("username", friend);
                     formdata.append("message", currmessage);
+                   
                     setcurrmessage("");
                     fetch(`/api/connect`, {
                         method: "PUT",

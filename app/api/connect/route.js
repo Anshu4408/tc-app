@@ -24,22 +24,8 @@ export async function PUT(request) {
         return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
 
-    if (user) {
-
-         
-                   const update= await userModel.findOneAndUpdate(
-                        { email: username },
-                        { $push: { messages:`${token}: ${data}`  } },
-                        { new: true }
-                    );
-                    const update2 = await userModel.findOneAndUpdate(
-                        { email: token },
-                        { $push: { messages: `${username}: ${data}` } },
-                        { new: true }
-                    );
-                
-              
-            }
+    
+            
 
 
       
