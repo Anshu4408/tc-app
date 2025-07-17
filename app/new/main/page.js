@@ -27,8 +27,6 @@ const page = () => {
         };
         socket.onmessage = (event) => {
             setMessages(prev => [...prev, event.data]);
-
-
             console.log("Message from server:", event.data);
         };
         socket.onclose = () => {
@@ -158,8 +156,10 @@ const page = () => {
                             <form className='flex  gap-2 p-5 fixed bottom-[-10] w-[60vw] ' onSubmit={(e) => {
                                 e.preventDefault();
                                 if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+                                    console.log("Sending:", currmessage);
                                     socketRef.current.send(currmessage);
                                 }
+                                
                                 setcurrmessage("");
                             }} >
 
