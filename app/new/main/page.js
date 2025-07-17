@@ -156,15 +156,11 @@ const page = () => {
                     formdata.append("username", friend);
                     formdata.append("message", currmessage);
                    
-                    setcurrmessage("");
-                    fetch(`/api/connect`, {
-                        method: "PUT",
-                        body: formdata,
-                    }).then(res => res.json()).then(data => {
-                        console.log(data);
-                        setmessage("");
-                    }).catch(err => console.error(err));
-                }} >
+                   if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+        socketRef.current.send(currmessage);
+        setcurrmessage("");
+      }
+   }}>
 
                     <input type='text' className='text-2xl text-center bg-blue-400   border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
                    
