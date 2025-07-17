@@ -31,13 +31,13 @@ export async function PUT(request) {
 
          
                    const update= await userModel.findOneAndUpdate(
-                        { email: uname },
+                        { email: username },
                         { $push: { messages:`${token}: ${data}`  } },
                         { new: true }
                     );
                     const update2 = await userModel.findOneAndUpdate(
                         { email: token },
-                        { $push: { messages: `${uname}: ${data}` } },
+                        { $push: { messages: `${username}: ${data}` } },
                         { new: true }
                     );
                 
