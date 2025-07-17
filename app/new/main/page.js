@@ -88,7 +88,7 @@ const page = () => {
                             Data.friends.map((req, index) => (
 
                                 <div key={index} className='mt-5 flex justify-between items-center bg-blue-500 p-2 w-full  cursor-pointer overflow-y-scroll' onClick={() => { setfriend(req) 
-                                     setMessages([]); connectwebSocket(req);
+                                    connectwebSocket(req);
 
                                 }}>
                                     <div className='mr-4'>{req}</div>
@@ -156,11 +156,15 @@ const page = () => {
                     formdata.append("username", friend);
                     formdata.append("message", currmessage);
                    
-                   if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
-                    socketRef.current.send(currmessage);
                     setcurrmessage("");
-      }
-   }}>
+                    fetch(`/api/connect`, {
+                        method: "PUT",
+                        body: formdata,
+                    }).then(res => res.json()).then(data => {
+                        console.log(data);
+                        setmessage("");
+                    }).catch(err => console.error(err));
+                }} >
 
                     <input type='text' className='text-2xl text-center bg-blue-400   border-1 border-white h-[4vh] w-full' value={currmessage} onChange={(e) => { setcurrmessage(e.target.value) }} placeholder='Message' />
                    
