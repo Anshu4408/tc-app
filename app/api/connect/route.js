@@ -9,9 +9,8 @@ export async function PUT(request) {
     const cookieStore = await cookies();
     const cookie = cookieStore.get('username');
     const token = decodeURIComponent(cookie?.value);
-        console.log(token)
+    console.log(token)
     const formdata = await request.formData();
-
     const username = decodeURIComponent(formdata.get("username") );
     console.log(username)
     let data = formdata.get("message");
@@ -23,10 +22,6 @@ export async function PUT(request) {
         console.log("User not found");
         return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
-
-    
-            
-
 
       
  return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
