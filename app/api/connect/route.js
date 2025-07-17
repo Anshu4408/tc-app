@@ -46,9 +46,9 @@ export async function PUT(request) {
 
 
       
-
+ return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
     }
-   return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
+  
 
 
     
