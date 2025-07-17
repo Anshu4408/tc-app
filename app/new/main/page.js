@@ -1,9 +1,10 @@
 "use client"
 
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useRef } from 'react'
 
 const page = () => {
+    const socketRef = useRef(null);
     const [OldMessages, setOldMessages] = useState([])
     const [update, setupdate] = useState(0)
     const [currmessage, setcurrmessage] = useState("")
@@ -12,7 +13,11 @@ const page = () => {
      const [Messages, setMessages] = useState([])
     const [Data, setData] = useState([])
          const connectwebSocket = (req) => {
+             if (socketRef.current) {
+        socketRef.current.close();
+    }
             const socket = new WebSocket(`wss://socket-server-t4df.onrender.com/?username=${req}`);
+                socketRef.current = socket;
             socket.onopen = () => {
                 console.log("WebSocket connection established");
             };

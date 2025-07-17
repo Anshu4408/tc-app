@@ -3,11 +3,8 @@ import userModel from "@/models/userModel";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-
-
 export async function PUT(request) {
 
-   
     await mongoose.connect("mongodb+srv://Anshu45:Anshukumar8%40@cluster0.cse6amd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     const cookieStore = await cookies();
     const cookie = cookieStore.get('username');
