@@ -13,6 +13,9 @@ const page = () => {
     const [message, setmessage] = useState("")
     const [Messages, setMessages] = useState([])
     const [Data, setData] = useState([])
+    useEffect(() => {
+           setMessages([]); 
+    }, [friend]);
     const connectwebSocket = (req) => {
         if (socketRef.current) {
             socketRef.current.close();
