@@ -27,7 +27,7 @@ export default function Home() {
   
   <p className=" text-2xl md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
     <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 ml-[23vw] ">Welcome to NITTeamly, </span>
-    <span className=" mt-30 ml-10 md:ml-30 lg:ml-90 absolute bottom-[-110]">From 
+    <span className=" mt-30  ml-[23vw] absolute bottom-[-110]">From 
       <span className="text-blue-700 font-bold">Strangers 
         </span>to Teammates — Instantly.</span>
         </p>
