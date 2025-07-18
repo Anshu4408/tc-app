@@ -22,7 +22,7 @@ export default function Home() {
   href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Bebas+Neue&family=Orbitron:wght@400..900&display=swap"
   rel="stylesheet"
 />
-<div className="flex  min-w-[100vw] min-h-[100vh] bg-[url('/small bg.png')]   lg:bg-[url('/bgtc_upscaled.jpg')]   bg-no-repeat bg-cover bg-center h-screen custom-font  " >
+<div className="flex  min-w-[100vw] min-h-[100vh] lg:bg-[url('/small bg.png')]      bg-no-repeat bg-cover bg-center h-screen custom-font  " >
 <div className="mx-auto">
   
   <p className=" text-2xl md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
