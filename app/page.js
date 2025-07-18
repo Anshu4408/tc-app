@@ -28,7 +28,7 @@ export default function Home() {
   <img src="/bgtc_upscaled.jpg" alt="NITTeamly Logo" className="absolute top-40 left-10 w-full " />
   <p className=" text-2xl z-10 relative md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
     <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 ml-[23vw] ">Welcome to NITTeamly, </span>
-    <span className=" mt-30 ml-10 md:ml-30 lg:ml-90 absolute top-[80vh]">From 
+    <span className=" mt-30 ml-10 md:ml-30 lg:ml-60 absolute top-[80vh]">From 
       <span className="text-blue-700 font-bold">Strangers 
         </span>to Teammates — Instantly.</span>
         </p>
