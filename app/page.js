@@ -22,10 +22,10 @@ export default function Home() {
   href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Bebas+Neue&family=Orbitron:wght@400..900&display=swap"
   rel="stylesheet"
 />
-<div className="flex  min-w-[100vw] min-h-[100vh]   bg-[url('/bgtc_upscaled.jpg')] bg-cover bg-center h-screen custom-font  " >
+<div className="flex  min-w-[100vw] min-h-[100vh]   bg-[url('/bgtc_upscaled.jpg')]   bg-no-repeat bg-cover bg-center h-screen custom-font  " >
 <div>
-  <p className="text-6xl  text-white flex flex-col  custom-font">
-    <span className="text-8xl custom-font mt-20 ml-[23vw] ">Welcome to NITTeamly, </span>
+  <p className=" text-2xl md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
+    <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 ml-[23vw] ">Welcome to NITTeamly, </span>
     <span className=" mt-30 ml-90 absolute bottom-[-110]">From 
       <span className="text-blue-700 font-bold">Strangers 
         </span>to Teammates — Instantly.</span>
