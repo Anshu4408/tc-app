@@ -18,7 +18,7 @@ A full-stack **Next.js** application designed for students to **create, join, an
 - **Backend:** Node.js, API Routes
 - **Database:** MongoDB (via Mongoose)
 - **Auth:** Delta Auth (OAuth2)
-- **Deployed:** https://tc-app-ssgz.onrender.com
+- **Deployed:** https://tc-app-nu.vercel.app
 
 
 
