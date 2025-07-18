@@ -33,17 +33,7 @@ export default function Home() {
         </p>
  
  </div>
-  {/* 
-</div>
-<div className="flex justify-center items-center  custom-font">
-
-<p className=" text-4xl mx-10 font-bold">NITTeamly brings Trichy minds together.
-Create, join, and collaborate — effortlessly.</p> 
-</div>
-<p className=" text-2xl p-4"> Group up smarter at NIT Trichy.
-Find teammates, projects, and friends — all in one place.</p>
-<p className=" text-2xl p-4">Your team. Your terms.
-From hostel rooms to hackathons, NITTeamly makes group formation simple.</p> */}
+ 
 </div>
 <Footer/>
     </>
