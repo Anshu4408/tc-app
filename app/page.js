@@ -23,11 +23,11 @@ export default function Home() {
   rel="stylesheet"
 />
 <div className="flex  min-w-[100vw] min-h-[100vh]   bg-[url('/bgtc_upscaled.jpg')]   bg-no-repeat bg-cover bg-center h-screen custom-font  " >
-<div>
+<div className="mx-auto">
   
   <p className=" text-2xl md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
-    <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 ml-[25vw] ">Welcome to NITTeamly, </span>
-    <span className=" mt-30  ml-[25vw] absolute bottom-[-110]">From 
+    <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 mx-auto ">Welcome to NITTeamly, </span>
+    <span className=" mt-30  mx-auto absolute bottom-[-110]">From 
       <span className="text-blue-700 font-bold">Strangers 
         </span>to Teammates — Instantly.</span>
         </p>
