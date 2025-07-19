@@ -230,7 +230,7 @@ const page = () => {
         {showform && (
           <>
             <div className='bg-blue-500 text-white fixed top-[25vh] ml-[15vw] w-[70vw] h-[50vh] rounded-2xl flex justify-center items-center'>
-              <form className='flex flex-col  items-center justify-center' method="POST" onSubmit={async (e) => {
+              <form className='flex flex-col  items-center justify-center sm:text-sm ' method="POST" onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target);
                 const res = await fetch("/api/add", {
