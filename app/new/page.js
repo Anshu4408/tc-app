@@ -255,7 +255,7 @@ const page = () => {
                   <input id="date" className='border-1 text-center rounded-sm text-[3vw]' type="date" name="date" required={true}/>
 
 
-                <input className='border-1 text-center m-4 rounded-sm w-1/3 mx-auto bg-white text-blue-700 hover:bg-blue-300 cursor-pointer' type="submit" />
+                <input className='border-1 text-center m-4 rounded-sm w-1/3 mx-auto sm:text-[3vw] bg-white text-blue-700 hover:bg-blue-300 cursor-pointer' type="submit" value="Add" />
               </form>
             </div>
           </>
