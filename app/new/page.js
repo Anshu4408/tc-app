@@ -246,7 +246,7 @@ const page = () => {
               }}>
                 <label htmlFor="title"></label>
                 <input id="title" name="title" className='border-1 text-center m-4 rounded-sm max-w-[25vw]' type="text" placeholder='Title' required={true} />
-                <span><label htmlFor='PeopleReq'> People Required</label><input className='border-1 text-center m-4 rounded-sm max-w-[25vw]' type="number" name="required" placeholder="Number of people required" required={true} /></span>
+                <span><label htmlFor='PeopleReq'></label><input className='border-1 text-center m-4 rounded-sm max-w-[25vw]' type="number" name="required" placeholder="Number of people required" required={true} /></span>
 
                 <span className='flex gap-6 m-4 '>   <label htmlFor="time"> Expires till :</label>
 
