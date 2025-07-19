@@ -190,7 +190,7 @@ const page = () => {
                   <p className='text-sm mx-1'>Created By: <span className='font-bold'>{e.name}</span></p>
                   <p className='text-sm mx-1'>Contact Info: <span className='font-bold'>{e.phone}</span></p>
 
-                  {!(e.Joined.find((num) => num === email)) &&(e.Joined.length < e.PeopleReq) && (
+                  {!(e.Joined.find((num) => num === email)) &&(e.Joined.length < e.PeopleReq) && !(e.email === email)&& (
                     <button className='bg-green-600 text-white text-lg pl-4 pr-4 rounded-sm  cursor-pointer' onClick={() => {
                       handleJoin(e);
                     }}>Join</button>
@@ -206,7 +206,7 @@ const page = () => {
                       handleClick(e);
                     }}>Delete</button>
                   )}
-                  {!(e.Joined.find((num) => num === email))&&(<>
+                  {!(e.email === email)&&(<>
                     <button className='bg-blue-500 text-white text-lg pl-4 pr-4 rounded-sm  cursor-pointer' onClick={() => {
                     handlefriends(e.email,email);
 
