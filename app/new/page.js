@@ -250,9 +250,9 @@ const page = () => {
 
            <label htmlFor="time">Expires till :</label>
 
-                  <input id='time' name="time" className=' text-[3vw] border-1 text-center rounded-sm' type="time" required={true}/>
+                  <input id='time' name="time" className=' sm:text-[3vw] border-1 text-center rounded-sm' type="time" required={true}/>
                   <label htmlFor="date"></label>
-                  <input id="date" className='border-1 text-center rounded-sm text-[3vw]' type="date" name="date" required={true}/>
+                  <input id="date" className='border-1 text-center rounded-sm sm:text-[3vw]' type="date" name="date" required={true}/>
 
 
                 <input className='border-1 text-center m-4 rounded-sm w-1/3 mx-auto sm:text-[3vw] bg-white text-blue-700 hover:bg-blue-300 cursor-pointer' type="submit" value="Add" />
