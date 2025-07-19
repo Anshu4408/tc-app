@@ -28,8 +28,8 @@ export default function Home() {
   <p className=" text-2xl md:text-4xl lg:text-6xl  text-white flex flex-col  custom-font">
     <span className="text-4xl md:text-6xl lg:text-8xl custom-font mt-20 mx-auto ">Welcome to NITTeamly, </span>
     <span className=" mt-30  mx-auto absolute bottom-[-110]">From 
-      <span className="text-blue-700 font-bold">Strangers 
-        </span>to Teammates — Instantly.</span>
+      <span className="text-blue-700 font-bold"> Strangers  
+        </span> to Teammates — Instantly.</span>
         </p>
  
  </div>
