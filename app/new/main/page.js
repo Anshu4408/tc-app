@@ -20,7 +20,7 @@ const page = () => {
         if (socketRef.current) {
             socketRef.current.close();
         }
-        const socket = new WebSocket(`wss://socket-server-nextjs-production.up.railway.app/api/?username=${req}&myusername=${encodeURIComponent(email)}`);
+        const socket = new WebSocket(`ws://socket-server-nextjs-production.up.railway.app/api/?username=${req}&myusername=${encodeURIComponent(email)}`);
         socketRef.current = socket;
         socket.onopen = () => {
             console.log("WebSocket connection established");
