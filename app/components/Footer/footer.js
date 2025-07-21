@@ -18,7 +18,7 @@ const Footer = () => {
   </div>
 
   <div className=" text-center text-gray-500 ">
-    Made with ❤️ by Team TC · © {new Date().getFullYear()} NIT Trichy
+    Made with ❤️ for Team TC · © {new Date().getFullYear()} NIT Trichy
   </div>
 </footer>
   )
